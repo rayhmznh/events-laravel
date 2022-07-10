@@ -1,0 +1,9 @@
+.title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.thumbnail {
+  width: 800px;
+  object-fit: cover;
+}
