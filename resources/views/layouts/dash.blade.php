@@ -28,7 +28,7 @@
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class="navbar-brand" href="dashboard.html">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <!-- Logo icon -->
                     <b class="logo-text">
                         <!-- Dark Logo icon -->
@@ -52,7 +52,7 @@
                         </form> -->
 
                         <div class="app-search d-none d-md-block me-3 text-white">
-                            Halo, Raisya
+                            Halo, {{ Auth::user()->name }}
                         </div>
                     </li>
                     <!-- ============================================================== -->
@@ -79,28 +79,32 @@
                 <ul id="sidebarnav">
                     <!-- User Profile-->
                     <li class="sidebar-item pt-2">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('dashboard') }}"
                             aria-expanded="false">
                             <i class="far fa-clock" aria-hidden="true"></i>
                             <span class="hide-menu">Dashboard</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('profile') }}"
                             aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="hide-menu">Profile</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add-event.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('add-event') }}"
                             aria-expanded="false">
                             <i class="fa fa-table" aria-hidden="true"></i>
                             <span class="hide-menu">Add Events</span>
                         </a>
                     <li class="text-center p-20 upgrade-btn">
-                        <a href="#" class="btn d-grid btn-danger text-white" target="_blank">
-                            Logout</a>
+                        <form action="{{ url('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-primary" style="width: 100%; font-weight: 600;">
+                                Logout
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </nav> 
