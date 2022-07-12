@@ -30,4 +30,13 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
     ->name('addevent');
     Route::get('/user-form', 'App\Http\Controllers\UserFormController@index')
     ->name('user-form');
+    Route::get('/user-form-edit', 'App\Http\Controllers\UserFormEditController@index')
+    ->name('user-form-edit');
+
+    Route::get('/dashboard-admin', 'App\Http\Controllers\DashboardAdminController@index')
+    ->name('dashboard-admin');
+    Route::get('/database-user', 'App\Http\Controllers\DbUser@index')
+    ->name('database-user');
+    Route::get('/database-event', 'App\Http\Controllers\DbEvent@index')
+    ->name('database-event');
    

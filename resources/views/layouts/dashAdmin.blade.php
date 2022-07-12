@@ -11,7 +11,7 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>User Dashboard</title>
+    <title>Admin Dashboard</title>
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('frontend/images/logo/Logo - Icon.png') }}">
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     @include('includes.styledash')
@@ -52,7 +52,7 @@
                         </form> -->
 
                         <div class="app-search d-none d-md-block me-3 text-white">
-                            Halo, Raisya
+                            Halo, Admin
                         </div>
                     </li>
                     <!-- ============================================================== -->
@@ -79,27 +79,27 @@
                 <ul id="sidebarnav">
                     <!-- User Profile-->
                     <li class="sidebar-item pt-2">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboardAdmin.html"
                             aria-expanded="false">
                             <i class="far fa-clock" aria-hidden="true"></i>
                             <span class="hide-menu">Dashboard</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="DatabaseUser.html"
                             aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="hide-menu">Profile</span>
+                            <span class="hide-menu">Databases Users</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add-event.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="DatabaseEvent.html"
                             aria-expanded="false">
                             <i class="fa fa-table" aria-hidden="true"></i>
-                            <span class="hide-menu">Add Events</span>
+                            <span class="hide-menu">Databases Events</span>
                         </a>
                     <li class="text-center p-20 upgrade-btn">
-                        <a href="#" class="btn d-grid btn-danger text-white" target="_blank">
+                        <a href="#" class="btn d-grid btn-danger text-white">
                             Logout</a>
                     </li>
                 </ul>
@@ -109,11 +109,9 @@
     </div>
     </aside>
 
-    @yield('dash')
-    @yield('profile')
-    @yield('add-event')
-    @yield('user-form')
-    @yield('user-form-edit')
+    @yield('dashAdmin')
+    @yield('DbUser')
+    @yield('DbEvent')
     @include('includes.footerdash')
     @include('includes.scriptdash')
 
