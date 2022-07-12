@@ -66,6 +66,7 @@
         </nav>
 
         @yield('content')
+        @yield('detail-content')
         @include('includes.footer')
         @include('includes.script')
 

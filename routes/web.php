@@ -23,8 +23,24 @@ Route::get('/event', 'App\Http\Controllers\EventController@index')
 ->name('event');
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
+<<<<<<< HEAD
+    ->name('dashboard');
+    Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
+    ->name('profile');
+    Route::get('/addevent', 'App\Http\Controllers\AddEventController@index')
+    ->name('addevent');
+    Route::get('/user-form', 'App\Http\Controllers\UserFormController@index')
+    ->name('user-form');
+    Route::get('/user-form-edit', 'App\Http\Controllers\UserFormEditController@index')
+    ->name('user-form-edit');
+    
+    //gakepanggil
+    Route::get('/detail-content', 'App\Http\Controllers\DetailContentController@index')
+    ->name('detail-content');
+=======
     ->name('dashboard')
     ->middleware(['auth']);
+>>>>>>> a378b5ab6941a78af85048a96e5685e2c278a0f0
 
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
     ->name('profile')
