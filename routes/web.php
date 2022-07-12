@@ -32,6 +32,10 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
     ->name('user-form');
     Route::get('/user-form-edit', 'App\Http\Controllers\UserFormEditController@index')
     ->name('user-form-edit');
+    
+    //gakepanggil
+    Route::get('/detail-content', 'App\Http\Controllers\DetailContentController@index')
+    ->name('detail-content');
 
     Route::get('/dashboard-admin', 'App\Http\Controllers\DashboardAdminController@index')
     ->name('dashboard-admin');

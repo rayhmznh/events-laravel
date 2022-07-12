@@ -10,5 +10,7 @@
         <link href="{{url('frontend/css/bootstrap-icons.css')}}" rel="stylesheet">
 
         <link href="{{url('frontend/css/templatemo-leadership-event.css')}}" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{ url('frontend/css/main.css') }}">
            
         <!-- Favicon icon -->
