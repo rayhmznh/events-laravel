@@ -18,11 +18,12 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')
     ->name('home');
 
 Auth::routes();
-// Route::delete('/logout', [HomController::class, 'logout']);
+
 Route::get('/event', 'App\Http\Controllers\EventController@index')
 ->name('event');
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
+<<<<<<< HEAD
     ->name('dashboard');
     Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
     ->name('profile');
@@ -36,11 +37,28 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
     //gakepanggil
     Route::get('/detail-content', 'App\Http\Controllers\DetailContentController@index')
     ->name('detail-content');
+=======
+    ->name('dashboard')
+    ->middleware(['auth']);
+>>>>>>> a378b5ab6941a78af85048a96e5685e2c278a0f0
 
-    Route::get('/dashboard-admin', 'App\Http\Controllers\DashboardAdminController@index')
-    ->name('dashboard-admin');
-    Route::get('/database-user', 'App\Http\Controllers\DbUser@index')
-    ->name('database-user');
-    Route::get('/database-event', 'App\Http\Controllers\DbEvent@index')
-    ->name('database-event');
+Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
+    ->name('profile')
+    ->middleware(['auth']);
+
+Route::get('/all-event', 'App\Http\Controllers\AllEventController@index')
+    ->name('all-event')
+    ->middleware(['auth']);
+
+Route::get('/add-event', 'App\Http\Controllers\AllEventController@add')
+    ->name('add-event');
    
+Route::get('/dashboard-admin', 'App\Http\Controllers\DashboardAdminController@index')
+    ->name('dashboard-admin');
+
+Route::get('/database-user', 'App\Http\Controllers\DbUser@index')
+    ->name('database-user');
+    
+Route::get('/database-event', 'App\Http\Controllers\DbEvent@index')
+    ->name('database-event');
+    

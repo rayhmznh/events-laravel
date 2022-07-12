@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    All Events - Gunadarma Event
+@endsection
+
 @section('content')
 <main>
     <div class="jumbotron jumbotron-fluid jumbotron-lomba">

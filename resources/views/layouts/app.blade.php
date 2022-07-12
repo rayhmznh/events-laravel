@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Gunadarma Event</title>
+        <title>@yield('title')</title>
         <link rel="icon" type="image/png" sizes="16x16" href="{{ url('frontend/images/logo/Logo - Icon.png') }}">
         @include('includes.style')
     </head>
@@ -25,29 +25,40 @@
                     <span class="brand-text">Gunadarma <br> Event</span>
                 </a>
 
-                <a class="nav-link custom-btn btn d-lg-none" href="{{ url('register') }}">Register</a>
-                <a class="nav-link custom-btn btn d-lg-none" href="{{ url('login') }}">Login</a>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#">Home</a>
+                            <a class="nav-link click-scroll" href="{{ url('/') }}">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a target="_blank" class="nav-link click-scroll" href="{{ url('event') }}events.html">Event</a>
+                            <a target="_blank" class="nav-link click-scroll" href="{{ url('event') }}">Event</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_3">About</a>
+                        </li>
 
-                        <li class="nav-item">
-                            <a target=_blank class="nav-link custom-btn btn d-none d-lg-block" href="{{ url('register') }}" >Register</a> 
-                            
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-btn btn d-none d-lg-block" href="{{ url('login') }}" target="_blank">Login</a>
-                        </li>
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link custom-btn btn d-none d-lg-block" href="{{ url('register') }}" >Register</a> 
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-btn btn d-none d-lg-block" href="{{ url('login') }}">Login</a>
+                            </li>
+                        @endguest
+
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="{{ url('dashboard') }}">Dashboard</a>
+                            </li>
+                            <form action="{{ url('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-primary" style="border-radius: 25px; padding: 10px 15px; font-weight: 600;">
+                                    Logout
+                                </button>
+                            </form>
+                        @endauth
                     </ul>
                 <div>
                         
