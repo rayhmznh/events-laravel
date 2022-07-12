@@ -95,6 +95,10 @@
     @yield('profile')
     @yield('event-dashboard')
     @yield('add-event')
+
+    @yield('user-form')
+    @yield('user-form-edit')
+    
     @include('includes.footerdash')
     @include('includes.scriptdash')
 

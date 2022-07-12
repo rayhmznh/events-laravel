@@ -37,3 +37,11 @@ Route::get('/all-event', 'App\Http\Controllers\AllEventController@index')
 Route::get('/add-event', 'App\Http\Controllers\AllEventController@add')
     ->name('add-event');
    
+Route::get('/dashboard-admin', 'App\Http\Controllers\DashboardAdminController@index')
+    ->name('dashboard-admin');
+
+Route::get('/database-user', 'App\Http\Controllers\DbUser@index')
+    ->name('database-user');
+    
+Route::get('/database-event', 'App\Http\Controllers\DbEvent@index')
+    ->name('database-event');
