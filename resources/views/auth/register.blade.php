@@ -1,6 +1,8 @@
 @extends('layouts.auth')
 
-@section('title', 'Register')
+@section('title')
+    Register - Gunadarma Event
+@endsection
     
 @section('content')
 <div class="main-w3layouts wrapper">
@@ -19,6 +21,15 @@
                 </div>
                 <br>
                 <div>
+                    <input id="phone" type="text" placeholder="No HP" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus required>
+                    @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <br>
+                <div>
                   <input id="email" type="email" placeholder="E-mail" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"autofocus required>
                   @error('email')
                       <span class="invalid-feedback" role="alert">
@@ -27,7 +38,6 @@
                   @enderror
                 </div>
                 <br>
-
                   <div>
                       <input id="password" type="password" placeholder ="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                       @error('password')
@@ -49,7 +59,7 @@
                 </div>
                 <input type="submit" value="SIGNUP">
             </form>
-            <p>Don't have an Account? <a href="{{ url('login') }}" style="font-weight: 600;"> Login Now!</a></p>
+            <p>Already have an Account? <a href="{{ url('login') }}" style="font-weight: 600;"> Login Here!</a></p>
         </div>
     </div>
     <ul class="colorlib-bubbles">

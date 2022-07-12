@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Gunadarma Event
+@endsection
+
 @section('content')
 <main>
     @guest
@@ -13,7 +17,7 @@
                         <h1 class="text-white mb-4"><u class="text-info">Gunadarma</u> <br>Events 2022</h1>
 
                         <div class="d-flex justify-content-center align-items-center">  
-                            <a target=_blank href="Register.html" class="nav-link custom-btn btn-light d-lg-block" >Register Now!</a>
+                            <a target=_blank href="{{ url('register') }}" class="nav-link custom-btn btn-light d-lg-block" >Register Now!</a>
                         </div>
 
                         <a href="#section_3" class="custom-link bi-arrow-down arrow-icon"></a>
