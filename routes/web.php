@@ -45,3 +45,4 @@ Route::get('/database-user', 'App\Http\Controllers\DbUser@index')
     
 Route::get('/database-event', 'App\Http\Controllers\DbEvent@index')
     ->name('database-event');
+    
