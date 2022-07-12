@@ -6,6 +6,7 @@
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <meta name="description" content="">
         <meta name="author" content="">
+        <title>@yield('title')</title>
         @include('includes.auth.style')
     </head>
     <body>

@@ -11,7 +11,7 @@
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>User Dashboard</title>
+    <title>@yield('title')</title>
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('frontend/images/logo/Logo - Icon.png') }}">
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     @include('includes.styledash')
@@ -25,52 +25,30 @@
     <header class="topbar" data-navbarbg="skin5">
         <nav class="navbar top-navbar navbar-expand-md navbar-dark">
             <div class="navbar-header" data-logobg="skin6">
-                <!-- ============================================================== -->
-                <!-- Logo -->
-                <!-- ============================================================== -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <!-- Logo icon -->
-                    <b class="logo-text">
-                        <!-- Dark Logo icon -->
-                        <img src="{{ url('frontend/images/logo/logo.png') }}" style="max-width:200px" alt="homepage" />
-                        <!-- <h2 color: black>Gunadarma<br>Events</h2> -->
-                    </b>
+                <a>
+                    <img src="{{ url('frontend/images/logo/logo.png') }}" style="max-width:200px" alt="homepage"/>
                 </a>
-                
-                <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
-                    href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
             </div>
             
             <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                 <ul class="navbar-nav ms-auto d-flex align-items-center">
                     <li class=" in">
-                        <!-- <form role="search" class="app-search d-none d-md-block me-3">
-                            <input type="text" placeholder="Search..." class="form-control mt-0">
-                            <a href="" class="active">
-                                <i class="fa fa-search"></i>
-                            </a>
-                        </form> -->
-
                         <div class="app-search d-none d-md-block me-3 text-white">
                             Halo, {{ Auth::user()->name }}
                         </div>
                     </li>
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
-                    <li>
 
+                    <li>
                         <div class="profile-pic" href="#">
                             <img src="{{ url('frontend/plugins/images/users/varun.jpg') }}" alt="user-img" width="36" class="img-circle">
                         </div>
                     </li>
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
+
                 </ul>
             </div>
         </nav>
     </header>
+
     <aside class="left-sidebar" data-sidebarbg="skin6">
         <!-- Sidebar scroll-->
         <div class="scroll-sidebar">
@@ -93,10 +71,10 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('add-event') }}"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('all-event') }}"
                             aria-expanded="false">
                             <i class="fa fa-table" aria-hidden="true"></i>
-                            <span class="hide-menu">Add Events</span>
+                            <span class="hide-menu">Events</span>
                         </a>
                     <li class="text-center p-20 upgrade-btn">
                         <form action="{{ url('logout') }}" method="POST">
@@ -115,8 +93,8 @@
 
     @yield('dash')
     @yield('profile')
+    @yield('event-dashboard')
     @yield('add-event')
-    @yield('user-form')
     @include('includes.footerdash')
     @include('includes.scriptdash')
 

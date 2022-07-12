@@ -18,16 +18,22 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')
     ->name('home');
 
 Auth::routes();
-// Route::delete('/logout', [HomController::class, 'logout']);
+
 Route::get('/event', 'App\Http\Controllers\EventController@index')
 ->name('event');
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
-    ->name('dashboard');
-    Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
-    ->name('profile');
-    Route::get('/addevent', 'App\Http\Controllers\AddEventController@index')
-    ->name('addevent');
-    Route::get('/user-form', 'App\Http\Controllers\UserFormController@index')
-    ->name('user-form');
+    ->name('dashboard')
+    ->middleware(['auth']);
+
+Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
+    ->name('profile')
+    ->middleware(['auth']);
+
+Route::get('/all-event', 'App\Http\Controllers\AllEventController@index')
+    ->name('all-event')
+    ->middleware(['auth']);
+
+Route::get('/add-event', 'App\Http\Controllers\AllEventController@add')
+    ->name('add-event');
    

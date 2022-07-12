@@ -1,7 +1,10 @@
 @extends('layouts.auth')
 
-@section('content')
+@section('title')
+    Login - Gunadarma Event
+@endsection
 
+@section('content')
 <body>
     <!-- main -->
     <div class="main-w3layouts wrapper">
