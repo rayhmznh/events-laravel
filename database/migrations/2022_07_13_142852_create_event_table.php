@@ -23,8 +23,6 @@ return new class extends Migration
             $table->string('location');
             $table->string('registration_link');
             $table->text('description')->nullable()->default('text');
-            $table->string('contact_person');
-            $table->string('social_media');
             $table->string('poster');
             $table->timestamps();
             

@@ -67,7 +67,7 @@
                                     <option value="5">FSB</option>
                                     <option value="6">FIKOM</option>
                                     <option value="7">D3BK</option>
-                                    <option value="8">Umum</option>
+                                    <option value="8">General</option>
                                 </select>
                             </div>
 

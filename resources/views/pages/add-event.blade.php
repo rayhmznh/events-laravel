@@ -72,7 +72,7 @@
                                     <option value="5">FSB</option>
                                     <option value="6">FIKOM</option>
                                     <option value="7">D3BK</option>
-                                    <option value="8">Umum</option>
+                                    <option value="8">General</option>
                                 </select>
                             </div>
 
@@ -106,17 +106,6 @@
                                 </div>
                                 <textarea class="col-10 form-control fill-form rounded-5" rows="5"
                                     cols="5" required></textarea>
-                            </div>
-                            
-                            <div class="row mb-4">
-                                <div class="title-form fw-semibold col-2">Contact Person
-                                </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text"required>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="title-form fw-semibold col-2">Social Media
-                                </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text"required>
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Your Poster
