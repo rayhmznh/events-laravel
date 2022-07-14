@@ -20,7 +20,10 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')
 Auth::routes();
 
 Route::get('/event', 'App\Http\Controllers\EventController@index')
-->name('event');
+    ->name('event');
+
+Route::get('/detail-event/{id}', 'App\Http\Controllers\DetailContentController@index')
+    ->name('detail-event');
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
     ->name('dashboard')
@@ -37,15 +40,22 @@ Route::get('/all-event', 'App\Http\Controllers\AllEventController@index')
 Route::get('/add-event', 'App\Http\Controllers\AllEventController@add')
     ->name('add-event')
     ->middleware(['auth']);
-   
+
 Route::get('/dashboard-admin', 'App\Http\Controllers\DashboardAdminController@index')
     ->name('dashboard-admin')
-    ->middleware(['auth', 'admin']);
+    ->middleware(['auth']);
 
-Route::get('/database-user', 'App\Http\Controllers\DbUser@index')
-    ->name('database-user')
-    ->middleware(['auth', 'admin']);
+Route::prefix('database-user')
+    ->middleware(['auth'])
+    ->group(function(){
+        Route::get('/', 'App\Http\Controllers\DbUser@index');
+        Route::resource('/database-user', 'App\Http\Controllers\DbUser');
+});
     
-Route::get('/database-event', 'App\Http\Controllers\DbEvent@index')
-    ->name('database-event')
-    ->middleware(['auth', 'admin']);
+Route::prefix('database-event')
+    ->middleware(['auth'])
+    ->group(function(){
+        Route::get('/', 'App\Http\Controllers\DbEvent@index');
+        Route::resource('/database-event', 'App\Http\Controllers\DbEvent');
+});
+
