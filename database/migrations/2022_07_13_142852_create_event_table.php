@@ -17,14 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('organizer');
             $table->string('title');
-            $table->enum('category', ['Webinar', 'Workshop']);
+            // $table->enum('category', ['Webinar', 'Workshop']);
             $table->string('faculty');
-            $table->date('date_and_time');
+            // $table->date('date_and_time');
             $table->string('location');
             $table->string('registration_link');
-            $table->text('description')->nullable()->default('text');
-            $table->string('contact_person');
-            $table->string('social_media');
+            $table->text('description');
             $table->string('poster');
             $table->timestamps();
             

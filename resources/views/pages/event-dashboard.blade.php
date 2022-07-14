@@ -24,7 +24,7 @@
                     <div class="white-box">
                         <div class="d-flex justify-content-between mb-3">
                             <h3 class="box-title">My Events</h3>
-                            <a href="{{url('add-event')}}" class="btn btn-primary">Add Events</a>
+                            <a href="{{url('event/create')}}" class="btn btn-primary">Add Events</a>
                         </div>
 
                         <div class="table-responsive">
