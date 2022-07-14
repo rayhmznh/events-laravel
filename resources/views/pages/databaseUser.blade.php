@@ -1,5 +1,9 @@
 @extends('layouts.dashAdmin')
 
+@section('title')
+    Database User - Gunadarma Event
+@endsection
+
 @section('DbUser')
 <main>
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
@@ -9,7 +13,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">All Users</h4>
+                <h4 class="page-title mb-3">All Users</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             </div>
@@ -32,42 +36,29 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @forelse($items as $item)
+                                    <tr>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->username }}</td>
+                                        <td>{{ $item->organization }}</td>
+                                        <td>
+                                            <form action="{{ route('database-user.destroy', $item->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                @empty
                                 <tr>
-                                    <td>Muhamad Habibi</td>
-                                    <td>habibi1701</td>
-                                    <td>Us Creative</td>
-                                    <td>
-                                        <a class="fas fa-trash-alt"></a>
+                                    <td class="text-center">
+                                        Data Kosong
                                     </td>
-
                                 </tr>
-                                <tr>
-                                    <td>Alvinda Rafsanjani</td>
-                                    <td>alraf30</td>
-                                    <td>lulung palace</td>
-                                    <td>
-                                        <a class="fas fa-trash-alt"></a>
-                                    </td>
-
-                                 <tr>
-                                    <td>Nadira Raihanah</td>
-                                    <td>diraihanah</td>
-                                    <td>LepKom</td>
-                                    <td>
-                                        <a class="fas fa-trash-alt"></a>
-                                    </td>
-
-                                </tr>
-                               
-                                <tr>
-                                    <td>Early Indryana</td>
-                                    <td>ui.early</td>
-                                    <td>DSC UG</td>
-                                    <td>
-                                        <a class="fas fa-trash-alt"></a>
-                                    </td>
-
-                                </tr>
+                            @endforelse
                             </tbody>
                         </table>
                     </div>

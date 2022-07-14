@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('event', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('organizer');
             $table->string('title');
@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string('location');
             $table->string('registration_link');
             $table->text('description')->nullable()->default('text');
-            $table->string('poster');
+            $table->string('poster')->nullable();
+            $table->enum('status', ['Aktif', 'Non-Aktif']);
             $table->timestamps();
             
         });
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event');
+        Schema::dropIfExists('events');
     }
 };
