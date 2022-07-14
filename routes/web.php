@@ -20,7 +20,10 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')
 Auth::routes();
 
 Route::get('/event', 'App\Http\Controllers\EventController@index')
-->name('event');
+    ->name('event');
+
+Route::get('/detail-event/{id}', 'App\Http\Controllers\DetailContentController@index')
+    ->name('detail-event');
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
     ->name('dashboard')

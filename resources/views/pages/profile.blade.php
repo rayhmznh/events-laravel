@@ -27,30 +27,22 @@
             <div class="container-fluid">
             
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-4 col-xlg-3 col-md-12">
-                        <div class="white-box">
-                            <div class="user-bg"> <img width="100%" alt="user" src="{{ url('frontend/plugins/images/large/img1.jpg') }}">
-                                <div class="overlay-box">
-                                    <div class="user-content">
-                                        <a href="javascript:void(0)"><img src="{{ url('frontend/plugins/images/users/genu.jpg') }}"
-                                                class="thumb-lg img-circle" alt="img"></a>
-                                        <h4 class="text-white mt-2">{{ Auth::user()->name }}</h4>
-                                        <input class="col-10 form-control fill-form rounded-5" type="file"required>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                    <div class="col-lg-12 col-xlg-9 col-md-12">
                         <div class="card">
                             <div class="card-body">
                                 <form class="form-horizontal form-material">
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Name</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="Name"
+                                            <input type="text" placeholder="{{ Auth::user()->name }}"
+                                                class="form-control p-0 border-0"> 
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Username</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" placeholder="{{ Auth::user()->username }}"
                                                 class="form-control p-0 border-0"> 
                                         </div>
                                     </div>
@@ -58,7 +50,7 @@
                                     <div class="form-group mb-4">
                                         <label for="email" class="col-md-12 p-0">Email</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="email" placeholder="Email"
+                                            <input type="email" placeholder="{{ Auth::user()->email }}"
                                                 class="form-control p-0 border-0" name="email"
                                                 id="email">
                                         </div>
@@ -67,7 +59,7 @@
                                     <div class="form-group mb-4">
                                         <label for="phone" class="col-md-12 p-0">No HP</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="No HP"
+                                            <input type="text" placeholder="{{ Auth::user()->phone }}"
                                                 class="form-control p-0 border-0" name="phone"
                                                 id="phone">
                                         </div>

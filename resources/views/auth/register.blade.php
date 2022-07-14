@@ -21,6 +21,15 @@
                 </div>
                 <br>
                 <div>
+                    <input id="username" type="text" placeholder="Username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus required>
+                    @error('username')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <br>
+                <div>
                     <input id="phone" type="text" placeholder="No HP" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus required>
                     @error('phone')
                         <span class="invalid-feedback" role="alert">
