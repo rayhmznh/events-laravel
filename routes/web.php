@@ -23,24 +23,8 @@ Route::get('/event', 'App\Http\Controllers\EventController@index')
 ->name('event');
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
-<<<<<<< HEAD
-    ->name('dashboard');
-    Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
-    ->name('profile');
-    Route::get('/addevent', 'App\Http\Controllers\AddEventController@index')
-    ->name('addevent');
-    Route::get('/user-form', 'App\Http\Controllers\UserFormController@index')
-    ->name('user-form');
-    Route::get('/user-form-edit', 'App\Http\Controllers\UserFormEditController@index')
-    ->name('user-form-edit');
-    
-    //gakepanggil
-    Route::get('/detail-content', 'App\Http\Controllers\DetailContentController@index')
-    ->name('detail-content');
-=======
     ->name('dashboard')
     ->middleware(['auth']);
->>>>>>> a378b5ab6941a78af85048a96e5685e2c278a0f0
 
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
     ->name('profile')
@@ -51,14 +35,17 @@ Route::get('/all-event', 'App\Http\Controllers\AllEventController@index')
     ->middleware(['auth']);
 
 Route::get('/add-event', 'App\Http\Controllers\AllEventController@add')
-    ->name('add-event');
+    ->name('add-event')
+    ->middleware(['auth']);
    
 Route::get('/dashboard-admin', 'App\Http\Controllers\DashboardAdminController@index')
-    ->name('dashboard-admin');
+    ->name('dashboard-admin')
+    ->middleware(['auth', 'admin']);
 
 Route::get('/database-user', 'App\Http\Controllers\DbUser@index')
-    ->name('database-user');
+    ->name('database-user')
+    ->middleware(['auth', 'admin']);
     
 Route::get('/database-event', 'App\Http\Controllers\DbEvent@index')
-    ->name('database-event');
-    
+    ->name('database-event')
+    ->middleware(['auth', 'admin']);
