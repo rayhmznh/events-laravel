@@ -4,33 +4,39 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Carbon\Carbon;
 
 class Event extends Model
 {
     use HasFactory;
 
     protected $primaryKey = 'id';
-    
-//     protected $fillable = [
-//         'organizer',
-//         'title',
-//         'category',
-//         'faculty',
-//         'date_and_time',
-    
+    protected $guarded = ['id'];
+    protected $with = ['faculty'];
+    // protected $casts = [
+    //   'start_event',
+    //   'time_event' => 'datetime'
+    // 'created_at'=>'datetime:d-m-Y'  
+    // ];
 
     protected $fillable = [
         'organizer', 
         'title',
+        'faculty_id',
+        'category',
+        'start_event',
+        'time_event',
         'location',
         'registration_link',
         'description',
-        // 'poster'
+        'image'
     ];
 
-    protected $hidden = [
-
-    ];
+    public function faculty(){
+        return $this->belongsTo(Faculty::class);
+    }
+    
 }
         
    

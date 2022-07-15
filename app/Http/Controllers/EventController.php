@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Faculty;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Http\Requests\EventRequest; 
 
 class EventController extends Controller
 {
@@ -15,10 +18,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        // return view('pages.event');
         $events = Event::all();
-        // $events = Event::latest('id');
-        return view ('pages.event-dashboard', compact('events'));
+        return view ('pages.event-dashboard', ['events' => $events->sortByDesc('id')]);
     }
 
     /**
@@ -27,8 +28,13 @@ class EventController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('pages.add-event');
+    {   
+        $faculties = Faculty::all();
+        $categories = ['Webinar', 'Workshop'];
+        return view('pages.add-event', [
+            'category' => $categories,
+            'faculties' => $faculties,
+        ]);
     }
 
     /**
@@ -39,35 +45,31 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $validateData = $request->validate( [
             'organizer' => 'required', 
             'title'=> 'required',
+            'faculty_id'=> 'required',
+            'category'=> 'nullable',
+            'start_event'=> 'nullable',
+            'time_event'=> 'nullable',
             'location' => 'required',
             'registration_link' => 'required',
             'description' => 'required',
-            // 'poster'=> 'nullable|image|mimes:png,jpg,jpeg'
+            'image'=> 'nullable|image|mimes:png,jpg,jpeg'
         ]);
 
-        //upload image
-        // $poster = $request->file('image');
-        // $poster->storeAs('public/poster', $poster->hashName());
+        // validate upload image
+        if($request->file('image')){
+            $validateData['image'] = $request->file('image')->store('poster');
+        }
 
-        $event = Event::create([
-            'organizer'     => $request->organizer,
-            'title'     => $request->title,
-            'location'   => $request->location,
-            'registration_link'   => $request->registration_link,
-            'description'   => $request->description,
-            // 'poster'     => $poster->hashName(),
-        ]);
-
+        $event  = Event::create($validateData);
         if($event){
-            // redirect ke halaman my event
+            // redirect ke halaman my event, harusnya kasih pesan sukses
             return redirect()->route('event.index');
-            // ->with(['success' => 'Data Berhasil Disimpan!'])
         } else {
-            // redirect sementara ke halaman dashboard
-            return redirect()->route('pages.dashboard');
+            // redirect ke halaman add event, harusnya sama kasih pesan gagal
+            return redirect()->route('event.create');
         }
     }
 
@@ -113,6 +115,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
+        // masih ngasal, belom tak coba lagi. sisa semalem
         $event = Event::find($id);
         $event->delete();
         return redirect()->route('event.index');

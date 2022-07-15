@@ -42,13 +42,13 @@
                                     @foreach ($events as $event)
                                         
                                     <tr>
-                                        <td><img class="img-thumbnail" src="{{ url('frontend/images/poster/posterficar.jpg') }}" style="max-width:75px" alt="">
+                                        <td><img class="img-thumbnail" src="{{ asset('storage/' . $event->image) }}" style="max-width:75px" alt="">
                                         </td>
                                         <td>{{ $event->title }}</td>
                                         <td> <a class="btn btn-success btn-sm mb-2 rounded-pill btn-category">Active</a></td>
                                         <td>
                                             <a href="#" class="fas fa-pencil-alt"></a>
-                                            <a href="{{ route('event.destroy', ['id' => $event->id]) }}" class="fas fa-trash-alt"></a>
+                                            <a href="" class="fas fa-trash-alt"></a>
                                         </td>
                                         
                                     </tr>

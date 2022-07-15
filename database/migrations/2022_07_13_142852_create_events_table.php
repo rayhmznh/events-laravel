@@ -15,15 +15,16 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('faculty_id');
             $table->string('organizer');
             $table->string('title');
-            // $table->enum('category', ['Webinar', 'Workshop']);
-            // $table->string('faculty');
-            // $table->date('date_and_time');
+            $table->string('category');
+            $table->date('start_event');
+            $table->timestamp('time_event');
             $table->string('location');
             $table->string('registration_link');
             $table->text('description');
-            // $table->string('poster');
+            $table->string('image')->nullable();
             $table->timestamps();
             
         });

@@ -32,7 +32,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a target="_blank" class="nav-link click-scroll" href="{{ url('event') }}">Event</a>
+                            <a target="_blank" class="nav-link click-scroll" href="{{ url('all-event') }}">Event</a>
                         </li>
 
                         <li class="nav-item">
