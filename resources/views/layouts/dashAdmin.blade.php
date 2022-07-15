@@ -37,21 +37,20 @@
                     href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
             </div>
             
-            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5" style="margin-bottom: 15px;">
                 <ul class="navbar-nav ms-auto d-flex align-items-center">
                     <li class=" in">
-
                         <div class="app-search d-none d-md-block me-3 text-white">
                             Halo, Admin {{ Auth::user()->name }}
                         </div>
                     </li>
 
                     <li>
-
                         <div class="profile-pic" href="#">
-                            <img src="{{ url('frontend/plugins/images/users/varun.jpg') }}" alt="user-img" width="36" class="img-circle">
+                            <img src="https://www.kreen.id/public//image/profile_akun.png" class="thumb-lg img-circle" alt="Profile" style="width: 40px; height: 40px; margin-bottom: 8px;">
                         </div>
                     </li>
+
                 </ul>
             </div>
         </nav>

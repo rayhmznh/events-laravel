@@ -18,7 +18,7 @@ class DbEvent extends Controller
     {
         $items = Event::all();
         return view('pages.databaseEvent',[
-            'items' => $items
+            'items' => $items->sortByDesc('id')
         ]);
     }
 
