@@ -9,19 +9,28 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id';
+    
+//     protected $fillable = [
+//         'organizer',
+//         'title',
+//         'category',
+//         'faculty',
+//         'date_and_time',
+    
+
     protected $fillable = [
-        'organizer',
+        'organizer', 
         'title',
-        'category',
-        'faculty',
-        'date_and_time',
         'location',
         'registration_link',
         'description',
-        'poster'
+        // 'poster'
     ];
 
     protected $hidden = [
 
     ];
 }
+        
+   

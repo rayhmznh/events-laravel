@@ -25,19 +25,20 @@
                     <div class="white-box">
 
                         <!-- FORM -->
-                        <form action="" method="post">
+                        <form action="{{ route('event.store') }}" method="post">
+                            @csrf
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Organizer</div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text" required>
+                                <input class="col-10 form-control fill-form rounded-5" type="text" id="organizer" name="organizer" required>
                             </div>
 
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Title
                                 </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text" required>
+                                <input class="col-10 form-control fill-form rounded-5" type="text" id="title" name="title" required>
                             </div>
 
-                            <div class="row mb-4">
+                            {{-- <div class="row mb-4">
                                 <div class="col-2 title-form fw-semibold">Category
                                 </div>
                                 <div class="col-10">
@@ -58,9 +59,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="row mb-4">
+                            {{-- <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Faculty
                                 </div>
                                 <select class="form-select col-10" id="inputGroupSelect01" required>
@@ -74,9 +75,9 @@
                                     <option value="7">D3BK</option>
                                     <option value="8">General</option>
                                 </select>
-                            </div>
+                            </div> --}}
 
-                            <div class="d-flex align-items-start row ">
+                            {{-- <div class="d-flex align-items-start row ">
                                 <div class="title-form fw-semibold col-2 pt-1">Date and Time
                                 </div>
 
@@ -89,29 +90,29 @@
 
                                     <input class="form-control fill-form rounded-5 -mr-2" type="time" required>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Location
                                 </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text" required>
+                                <input class="col-10 form-control fill-form rounded-5" type="text" id="location" name="location" required>
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Registration Link
                                 </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text" required>
+                                <input class="col-10 form-control fill-form rounded-5" type="text" id="registration_link" name="registration_link" required>
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">
                                     Description
                                 </div>
                                 <textarea class="col-10 form-control fill-form rounded-5" rows="5"
-                                    cols="5" required></textarea>
+                                    cols="5" id="description" name="description" required></textarea>
                             </div>
-                            <div class="row mb-4">
+                            {{-- <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Your Poster
                                 </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="file"required>
-                            </div>
+                                <input class="col-10 form-control fill-form rounded-5" type="file" id="poster" name="poster" required>
+                            </div> --}}
                         </div>
 
                             <div class="d-flex justify-content-end">

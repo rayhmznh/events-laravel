@@ -25,7 +25,7 @@
     <header class="topbar" data-navbarbg="skin5">
         <nav class="navbar top-navbar navbar-expand-md navbar-dark">
             <div class="navbar-header" data-logobg="skin6">
-                <a>
+                <a href="{{ url('/') }}">
                     <img src="{{ url('frontend/images/logo/logo.png') }}" style="max-width:200px" alt="homepage"/>
                 </a>
             </div>
@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('all-event') }}"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('event') }}"
                             aria-expanded="false">
                             <i class="fa fa-table" aria-hidden="true"></i>
                             <span class="hide-menu">Events</span>
