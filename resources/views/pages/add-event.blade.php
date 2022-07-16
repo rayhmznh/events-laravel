@@ -25,16 +25,20 @@
                     <div class="white-box">
 
                         <!-- FORM -->
-                        <form action="" method="post">
+                        <form action="{{ route('add-event') }}" method="POST">
+                            @csrf
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Organizer</div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text" required>
+                                <input class="col-10 form-control fill-form rounded-5" id="organization" name="organization" value="{{ old('organization') }}"type="text" required>
                             </div>
+                            {{-- <div class="row mb-4">
+                                <div class="title-form fw-semibold col-2">Organizer</div>
+                                <input class="col-10 form-control fill-form rounded-5" id="organization" type="text" required>
+                            </div> --}}
 
                             <div class="row mb-4">
-                                <div class="title-form fw-semibold col-2">Title
-                                </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text" required>
+                                <div class="title-form fw-semibold col-2">Title</div>
+                                <input class="col-10 form-control fill-form rounded-5" id="title" name="title" value="{{ old('title') }}"type="text" required>
                             </div>
 
                             <div class="row mb-4">
@@ -43,14 +47,14 @@
                                 <div class="col-10">
                                     <div class="d-flex">
                                         <div class="form-check mr-5">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            <input class="form-check-input" type="radio" name="category" value="Webinar"
                                                 id="flexRadioDefault1" checked>
                                             <label class="form-check-label" for="flexRadioDefault1">
                                                 Webinar
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            <input class="form-check-input" type="radio" name="category" value="Workshop"
                                                 id="flexRadioDefault2">
                                             <label class="form-check-label" for="flexRadioDefault2">
                                                 Workshop
@@ -63,16 +67,16 @@
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Faculty
                                 </div>
-                                <select class="form-select col-10" id="inputGroupSelect01" required>
+                                <select class="form-select col-10" id="inputGroupSelect01" name="faculty" required>
                                     <option selected>Choose...</option>
-                                    <option value="1">FIKTI</option>
-                                    <option value="2">FE</option>
-                                    <option value="3">FTSP</option>
-                                    <option value="4">FPSI</option>
-                                    <option value="5">FSB</option>
-                                    <option value="6">FIKOM</option>
-                                    <option value="7">D3BK</option>
-                                    <option value="8">General</option>
+                                    <option value="FIKTI">FIKTI</option>
+                                    <option value="FE">FE</option>
+                                    <option value="FTSP">FTSP</option>
+                                    <option value="FPSI">FPSI</option>
+                                    <option value="FSB">FSB</option>
+                                    <option value="FIKOM">FIKOM</option>
+                                    <option value="D3BK">D3BK</option>
+                                    <option value="General">General</option>
                                 </select>
                             </div>
 
@@ -82,7 +86,7 @@
 
                                 <div class="row mb-4 col-5 d-flex flex-column mr-2">
 
-                                    <input class="form-control fill-form rounded-5 -ml-2" type="datetime-local" required>
+                                    <input class="form-control fill-form rounded-5 -ml-2" name="date_and_time" type="datetime-local" required>
                                 </div>
 
                                 {{-- <div class="row mb-4 col-5 d-flex flex-column">
@@ -91,26 +95,24 @@
                                 </div> --}}
                             </div>
                             <div class="row mb-4">
-                                <div class="title-form fw-semibold col-2">Location
-                                </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text" required>
+                                <div class="title-form fw-semibold col-2">Location</div>
+                                <input class="col-10 form-control fill-form rounded-5" id="location"  name="location" value="{{ old('location') }}"type="text" required>
                             </div>
                             <div class="row mb-4">
-                                <div class="title-form fw-semibold col-2">Registration Link
-                                </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="text" required>
+                                <div class="title-form fw-semibold col-2">Registration Link</div>
+                                <input class="col-10 form-control fill-form rounded-5" id="registration_link"  name="registration_link" value="{{ old('registration_link') }}"type="text" required>
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">
                                     Description
                                 </div>
                                 <textarea class="col-10 form-control fill-form rounded-5" rows="5"
-                                    cols="5" required></textarea>
+                                    cols="5" id="description"  name="description" value="{{ old('description') }}"type="textarea" required></textarea>
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Your Poster
                                 </div>
-                                <input class="col-10 form-control fill-form rounded-5" type="file"required>
+                                <input class="col-10 form-control fill-form rounded-5" id="poster"  name="poster" value="{{ old('poster') }}" type="file" required>
                             </div>
                         </div>
 
