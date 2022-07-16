@@ -82,13 +82,13 @@
 
                                 <div class="row mb-4 col-5 d-flex flex-column mr-2">
 
-                                    <input class="form-control fill-form rounded-5 -ml-2" type="date" required>
+                                    <input class="form-control fill-form rounded-5 -ml-2" type="datetime-local" required>
                                 </div>
 
-                                <div class="row mb-4 col-5 d-flex flex-column">
+                                {{-- <div class="row mb-4 col-5 d-flex flex-column">
 
                                     <input class="form-control fill-form rounded-5 -mr-2" type="time" required>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Location
