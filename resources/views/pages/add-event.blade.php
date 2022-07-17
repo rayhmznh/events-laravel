@@ -25,11 +25,11 @@
                     <div class="white-box">
 
                         <!-- FORM -->
-                        <form action="{{ route('add-event') }}" method="POST">
+                        <form action="{{ route('all-event.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Organizer</div>
-                                <input class="col-10 form-control fill-form rounded-5" id="organization" name="organization" value="{{ old('organization') }}"type="text" required>
+                                <input class="col-10 form-control fill-form rounded-5" id="organization" name="organizer" value="{{ old('organization') }}"type="text" required>
                             </div>
                             {{-- <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Organizer</div>
