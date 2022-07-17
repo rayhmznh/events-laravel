@@ -22,8 +22,8 @@ return new class extends Migration
             $table->datetime('date_and_time');
             $table->string('location');
             $table->string('registration_link');
-            $table->text('description')->nullable()->default('text');
-            $table->string('poster')->nullable();
+            $table->text('description')->nullable();
+            $table->text('poster')->nullable();
             $table->enum('status', ['Aktif', 'Non-Aktif']);
             $table->timestamps();
             

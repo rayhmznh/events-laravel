@@ -33,9 +33,7 @@ Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
     ->name('profile')
     ->middleware(['auth']);
 
-Route::get('/all-event', 'App\Http\Controllers\AllEventController@index')
-    ->name('all-event')
-    ->middleware(['auth']);
+Route::resource('/all-event', 'App\Http\Controllers\AllEventController')->middleware(['auth']);
 
 Route::get('/add-event', 'App\Http\Controllers\AllEventController@add')
     ->name('add-event')

@@ -18,7 +18,8 @@ class Event extends Model
         'location',
         'registration_link',
         'description',
-        'poster'
+        'poster',
+        'status'
     ];
 
     protected $hidden = [
