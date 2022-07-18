@@ -112,7 +112,8 @@
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Your Poster
                                 </div>
-                                <input class="col-10 form-control fill-form rounded-5" id="poster"  name="poster" value="{{ old('poster') }}" type="file" required>
+                                <input name="poster" class="col-10 form-control fill-form rounded-5 @error('poster') is-invalid @enderror" id="poster" value="{{ old('poster') }}" type="file" required>
+                                @error('poster') <span class="invalid-feedback">{{ $message }}</span> @enderror
                             </div>
                         </div>
 
