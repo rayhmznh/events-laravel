@@ -27,7 +27,6 @@ class AllEventController extends Controller
         $this->validate($request, [
             'poster' => 'required|mimes:jpeg,png,jpg',
         ]);
-
         if ($request->hasFile('poster')) {
             $filenameWithExt = Str::slug($request->get('title'));
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
