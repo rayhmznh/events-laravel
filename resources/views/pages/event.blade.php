@@ -22,7 +22,7 @@
                         @if ($item->poster == NULL)
                             <img src="{{ url('frontend/images/poster/posterficar.jpg') }}" class="card-img-top pb-0" height="400px" alt="Event">
                         @else
-                            <img src="{{ $item->poster }}" class="card-img-top pb-0" height="400px" alt="Event">
+                            <img src="{{url(Storage::url('poster/'.$item->poster))}}" class="card-img-top pb-0" height="400px" alt="Event">
                         @endif
                         
                         <div class="card-body">
