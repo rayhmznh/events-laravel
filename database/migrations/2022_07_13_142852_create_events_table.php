@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->text('poster')->nullable();
             $table->enum('status', ['Aktif', 'Non-Aktif']);
+            $table->integer('view');
             $table->timestamps();
             
         });
