@@ -16,14 +16,11 @@ class ProfileController extends Controller
         $item = User::all()
             ->where('id', $id)
             ->firstOrFail();
-        return view ('pages.profile',[
-            'item' => $item
-        ]);
+        return view ('pages.profile', compact('item'));
     }
 
     public function edit($id)
     {
-        $id = Auth::id();
         $detail = User::find($id);
 
         return view('pages.edit-profile', compact('detail'));
