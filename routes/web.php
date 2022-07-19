@@ -35,6 +35,10 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
 
 Route::resource('/profile', 'App\Http\Controllers\ProfileController')->middleware(['auth']);
 
+Route::get('/edit-profile', 'App\Http\Controllers\ProfileController@edit')
+    ->name('edit-profile')
+    ->middleware(['auth']);
+
 Route::resource('/all-event', 'App\Http\Controllers\AllEventController')->middleware(['auth']);
 
 Route::get('/add-event', 'App\Http\Controllers\AllEventController@add')

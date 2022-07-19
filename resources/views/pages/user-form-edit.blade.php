@@ -25,7 +25,9 @@
                     <div class="white-box">
 
                         <!-- FORM -->
-                        <form action="{{ route('all-event.update', $detail->id) }}" method="POST" enctype="multipart/form-data">
+                        <form 
+                        action="{{ route('all-event.update', $detail->id) }}" 
+                        method="POST" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
                             <div class="row mb-4">
