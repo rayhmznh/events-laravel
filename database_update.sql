@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Waktu pembuatan: 14 Jul 2022 pada 18.21
+-- Waktu pembuatan: 19 Jul 2022 pada 18.49
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -32,13 +32,15 @@ CREATE TABLE `events` (
   `organizer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category` enum('Webinar','Workshop') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `faculty` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date_and_time` date NOT NULL,
+  `faculty` enum('FIKTI','FE','FTSP','FPSI','FSB','FIKOM','D3BK','General') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_and_time` datetime NOT NULL,
   `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `registration_link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci DEFAULT 'text',
-  `poster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `poster` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('Aktif','Non-Aktif') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `view` int(11) NOT NULL,
+  `view_link` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -47,11 +49,8 @@ CREATE TABLE `events` (
 -- Dumping data untuk tabel `events`
 --
 
-INSERT INTO `events` (`id`, `organizer`, `title`, `category`, `faculty`, `date_and_time`, `location`, `registration_link`, `description`, `poster`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'LEPKOM', 'WORKSHOP LEPKOM', 'Workshop', 'FIKTI', '2022-07-01', 'ZOOM MEETING', 'WWW.LEPKOM.COM', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', NULL, 'Aktif', NULL, NULL),
-(2, 'LEPKOM', 'WEBINAR LEPKOM', 'Webinar', 'FIKTI', '2022-07-01', 'GMEET', 'WWW.LEPKOM.COM', 'Lorem Ipsum', NULL, 'Non-Aktif', NULL, NULL),
-(3, 'BEM FIKTI', 'Webinar FIKTI Career', 'Webinar', 'FIKTI', '2022-07-13', 'Universitas Gunadarma Kampus H', 'WWW.GUNADARMA.COM', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', NULL, 'Aktif', NULL, NULL),
-(4, 'BEM FE', 'Webinar FE Career', 'Webinar', 'FE', '2022-07-15', 'Universitas Gunadarma Kampus H', 'WWW.GUNADARMA.COM', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', NULL, 'Aktif', NULL, NULL);
+INSERT INTO `events` (`id`, `organizer`, `title`, `category`, `faculty`, `date_and_time`, `location`, `registration_link`, `description`, `poster`, `status`, `view`, `view_link`, `created_at`, `updated_at`) VALUES
+(1, 'BEM', 'aaaaaaaaa', 'Webinar', 'FIKTI', '2022-07-22 23:29:00', 'Indonesia', 'www.BEM.com', 'aaaaaaaaaaaa', 'aaaaaaaaa_1658248295.jpg', 'Aktif', 1, 0, '2022-07-19 09:31:35', '2022-07-19 09:35:29');
 
 -- --------------------------------------------------------
 
@@ -86,12 +85,7 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(11, '2014_10_12_000000_create_users_table', 2),
-(14, '2022_07_13_142852_create_event_table', 3),
-(15, '2022_07_13_142852_create_events_table', 4);
+(3, '2022_07_13_142852_create_events_table', 1);
 
 -- --------------------------------------------------------
 
@@ -149,9 +143,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `phone`, `organization`, `password`, `roles`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Nadira Raihanah', 'nadiraihanah', 'dira@a.com', NULL, '081295809593', 'LEPKOM', '$2y$10$XxLVUFa7b/Jw4lx/9WzQWuEU0lUfZH4UcH0VYvjvuBAB2HQ9N2G4y', 'ADMIN', 'TQPaE0UTrDyYmdW7q7OYbkhvFQdt4eXEk2fkMPqY4istJhV5qlUA8fv2RK18', '2022-07-13 06:47:40', '2022-07-13 06:47:40'),
-(2, 'Dira', 'ndr0609', 'dira@e.com', NULL, '081295809593', 'LEPKOM', '$2y$10$C5x2bwwxlbWiTfMVS3QITOmfsPzJKsMwVOLFUzEOh5DGZobo1fg3W', 'USER', 'cDjSroP7kocvnNLtRFrEK39PS0AB7gBEjvsH2f6WyjwRkT3x4OczWe5HaACb', '2022-07-13 06:48:12', '2022-07-13 06:48:12'),
-(7, 'Nadira', 'nadeera', 'dira@abc.com', NULL, '081234567890', NULL, '$2y$10$tXbb2TLBk2GJzvJkOGxRT.QW16PtVuqMqRrT9pvuN/nXWmtbrc4nu', 'USER', 'aSpLHBlBpYsvon1sOYxNQZACoPXAEhCuwfj5V8oNFTabKfMoMcZ8ax14lZTX', '2022-07-14 08:47:07', '2022-07-14 08:47:07');
+(1, 'Raisya Himzanah', 'Raisyaph', 'raisya19@gmail.com', NULL, '082120198371', NULL, '$2y$10$VlsDqOR0AvJxbmAZ0OgVl.1Y9ll8gro4JahNhglfpWpZZ6iVtxYTi', 'ADMIN', NULL, '2022-07-16 06:23:39', '2022-07-16 06:23:39'),
+(2, 'Raisya Putri H', 'rayhmznh', 'phimzanah@gmail.com', NULL, '082120198371', NULL, '$2y$10$6T/KD7pXk5azkdndvHFxceIduR8gJPD2KS0Ebqe4x7UNTBAHVMrcG', 'USER', 'EpM6XTGaRiejp3RslHfWLgqDXfqBqTTkkP12icNWEwMzDRuJA4g9sQljKu6n', '2022-07-16 06:27:35', '2022-07-16 06:27:35'),
+(3, 'alvin', 'alvin123', 'alraf@gmail.com', NULL, '087874883048', NULL, '$2y$10$F4EsGopQpQnL36fl.NWxTuYX/tBIfSFXZYXzWJR9DrzFfeOF5ibxy', 'USER', NULL, '2022-07-18 06:10:05', '2022-07-18 06:10:05'),
+(4, 'dira', 'nadeera', 'dira@a.com', NULL, '081295809593', NULL, '$2y$10$GeA38ILIT6GnCqy/AsQ/OeoR9KQPfOQth9Smyd/grzvJ.7T2xta0m', 'ADMIN', '6NwDoYda79oYR1v1ras46R0lIXiXkpC7NdU649OgapMVIiOHXogMgukdyOd2', '2022-07-18 08:43:09', '2022-07-18 08:43:09');
 
 --
 -- Indexes for dumped tables
@@ -205,7 +200,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -217,7 +212,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
@@ -229,7 +224,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

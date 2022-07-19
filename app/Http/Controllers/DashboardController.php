@@ -11,7 +11,8 @@ class DashboardController extends Controller
     {
         return view ('pages.dashboard',
         [
-            'event' => Event::sum('view')
+            'event_view' => Event::sum('view'),
+            'event_click' => Event::sum('view_link')
         ]);
     }
 

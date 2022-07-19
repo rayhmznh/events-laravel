@@ -111,7 +111,7 @@
                         <div class="d-flex align-items-center ">
                             <span class="mr-2"></span>
                             <div style="color: #7E7E7E;">
-                                <a href="{{ url( $items->registration_link )}}" target="_blank">{{ $items->registration_link }}</a>
+                                <a href="{{ url($items->registration_link) }}" target="_blank">{{ $items->registration_link }}</a>
                             </div>
                         </div>
                     </div>

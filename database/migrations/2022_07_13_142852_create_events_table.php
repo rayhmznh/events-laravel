@@ -26,6 +26,7 @@ return new class extends Migration
             $table->text('poster')->nullable();
             $table->enum('status', ['Aktif', 'Non-Aktif']);
             $table->integer('view');
+            $table->integer('view_link')->default(0);
             $table->timestamps();
             
         });

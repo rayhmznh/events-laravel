@@ -26,7 +26,7 @@
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Page Views</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                <li class="ms-auto"><span class="counter text-success">{{$event}}</span></li>
+                                <li class="ms-auto"><span class="counter text-success">{{$event_view}}</span></li>
                             </ul>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Link Click</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
-                                <li class="ms-auto"><span class="counter text-purple">869</span></li>
+                                <li class="ms-auto"><span class="counter text-purple">{{$event_click}}</span></li>
                             </ul>
                         </div>
                     </div>
