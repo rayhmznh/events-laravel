@@ -72,6 +72,7 @@
                                     <option value="FIKTI">FIKTI</option>
                                     <option value="FE">FE</option>
                                     <option value="FTSP">FTSP</option>
+                                    <option value="FTI">FTI</option>
                                     <option value="FPSI">FPSI</option>
                                     <option value="FSB">FSB</option>
                                     <option value="FIKOM">FIKOM</option>
