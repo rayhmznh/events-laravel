@@ -105,11 +105,7 @@
                             {{ $items->location }}
                         </div>
                     </div>
-                    <div class="mt-3"></div>
-                    <div class="font-weight-bold px-3"><b>Price</b></div>
                     <div class="px-3">
-                        <span id="harga_tiket_all"><span class="font-weight-bold text-danger"
-                                style="font-size:20px;">Free</span></span>
                         <div class="mt-3"></div>
                         <div class="font-weight-bold"><b>Link Pendaftaran</b></div>
                         <div class="d-flex align-items-center ">

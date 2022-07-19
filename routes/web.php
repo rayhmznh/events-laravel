@@ -29,9 +29,11 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
     ->name('dashboard')
     ->middleware(['auth']);
 
-Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
-    ->name('profile')
-    ->middleware(['auth']);
+// Route::get('/profile', 'App\Http\Controllers\ProfileController@index')
+//     ->name('profile')
+//     ->middleware(['auth']);
+
+Route::resource('/profile', 'App\Http\Controllers\ProfileController')->middleware(['auth']);
 
 Route::resource('/all-event', 'App\Http\Controllers\AllEventController')->middleware(['auth']);
 

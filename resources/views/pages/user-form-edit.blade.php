@@ -1,4 +1,9 @@
 @extends('layouts.dash')
+
+@section('title')
+    Edit Event - Gunadarma Event
+@endsection
+
 @section('user-form-edit')
 <main>
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
@@ -21,7 +26,8 @@
 
                         <!-- FORM -->
                         <form action="{{ route('all-event.update', $detail->id) }}" method="POST" enctype="multipart/form-data">
-                            @csrf {{ method_field('PUT') }}
+                            @method('PUT')
+                            @csrf
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Organizer</div>
                                 <input class="col-10 form-control fill-form rounded-5" type="text" name="organizer" value="{{ $detail->organizer }}" >

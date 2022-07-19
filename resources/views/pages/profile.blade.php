@@ -27,41 +27,51 @@
             <div class="container-fluid">
             
                 <div class="row">
-                    <div class="col-lg-12 col-xlg-9 col-md-12">
+                    <form class="col-lg-12 col-xlg-9 col-md-12" action="{{ route('profile.update'), $profile }}" method="POST">
+                        @method('PUT')
+                        @csrf
                         <div class="card">
                             <div class="card-body">
                                 <form class="form-horizontal form-material">
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Name</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="{{ Auth::user()->name }}"
-                                                class="form-control p-0 border-0"> 
+                                            <input type="text" placeholder="{{ $item->name }}"
+                                                class="form-control p-0 border-0" value="{{ $profile->name }}"> 
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Username</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="{{ Auth::user()->username }}"
-                                                class="form-control p-0 border-0"> 
+                                            <input type="text" placeholder="{{ $item->username }}"
+                                                class="form-control p-0 border-0" value="{{ $profile->username }}"> 
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Organization</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" placeholder="{{ $item->organization }}"
+                                                class="form-control p-0 border-0" value="{{ $profile->organization }}"> 
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label for="email" class="col-md-12 p-0">Email</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="email" placeholder="{{ Auth::user()->email }}"
+                                            <input type="email" placeholder="{{ $item->email }}"
                                                 class="form-control p-0 border-0" name="email"
-                                                id="email">
+                                                id="email" value="{{ $profile->email }}">
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label for="phone" class="col-md-12 p-0">No HP</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="{{ Auth::user()->phone }}"
+                                            <input type="text" placeholder="{{ $item->phone }}"
                                                 class="form-control p-0 border-0" name="phone"
-                                                id="phone">
+                                                id="phone" value="{{ $profile->phone }}">
                                         </div>
                                     </div>
 
@@ -73,7 +83,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
