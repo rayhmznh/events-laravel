@@ -25,6 +25,8 @@ class ProfileRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
+            'username' => 'required|string',
+            'organization' => 'required|string',
             'phone' => 'required|string',
             'email' => 'required|string',
         ];

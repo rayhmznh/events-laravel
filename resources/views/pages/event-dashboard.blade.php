@@ -41,19 +41,20 @@
                                 <tbody>
                                     @foreach ($data as $item)
                                     <tr>
-                                        <td><img class="img-thumbnail" src="{{url(Storage::url('poster/'.$item->poster))}}" style="max-width:75px" alt="">
-                                        </td>
+                                        <td><img class="img-thumbnail" src="{{url(Storage::url('poster/'.$item->poster))}}" style="max-width:75px" alt=""></td>
                                         <td>{{$item->title}}</td>
                                         <td> <a class="btn btn-success btn-sm mb-2 rounded-pill btn-category">{{$item->status}}</a></td>
                                         <td>
                                             {{-- <a href="user-edit.html" class="fas fa-pencil-alt"></a> --}}
                                             <a href="{{ route('all-event.edit', $item->id) }}"
-                                                class="fas fa-pencil-alt">
+                                                class="btn btn-info">
+                                                <i class="fa fa-pencil-alt"></i>
                                             </a>
                                             <form action="{{ route('all-event.destroy', $item->id) }}" class="d-inline"
                                                 method="POST">
                                                 @csrf {{ method_field('DELETE') }}
-                                                <button type="submit" class="fas fa-trash-alt">
+                                                <button class="btn btn-danger">
+                                                    <i class="fa fa-trash"></i>
                                                 </button>
                                             </form>
                                         </td>

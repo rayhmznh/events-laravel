@@ -31,10 +31,6 @@
                                 <div class="title-form fw-semibold col-2">Organizer</div>
                                 <input class="col-10 form-control fill-form rounded-5" id="organization" name="organizer" value="{{ old('organization') }}"type="text" required>
                             </div>
-                            {{-- <div class="row mb-4">
-                                <div class="title-form fw-semibold col-2">Organizer</div>
-                                <input class="col-10 form-control fill-form rounded-5" id="organization" type="text" required>
-                            </div> --}}
 
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Title</div>
@@ -90,10 +86,6 @@
                                     <input class="form-control fill-form rounded-5 -ml-2" name="date_and_time" type="datetime-local" required>
                                 </div>
 
-                                {{-- <div class="row mb-4 col-5 d-flex flex-column">
-
-                                    <input class="form-control fill-form rounded-5 -mr-2" type="time" required>
-                                </div> --}}
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Location</div>
@@ -108,7 +100,7 @@
                                     Description
                                 </div>
                                 <textarea class="col-10 form-control fill-form rounded-5" rows="5"
-                                    cols="5" id="description"  name="description" value="{{ old('description') }}"type="textarea" required></textarea>
+                                    cols="5" id="description"  name="description" value="{{ old('description') }}" type="textarea" required></textarea>
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Your Poster

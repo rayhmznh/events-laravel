@@ -39,11 +39,7 @@
                                         @forelse($items as $item)
                                         <tr>
                                             <td>
-                                                @if ($item->poster == NULL)
-                                                    <img class="img-thumbnail" src="{{ url('frontend/images/poster/posterficar.jpg') }}" style="max-width:75px" alt="">
-                                                @else
-                                                    <img class="img-thumbnail" src="{{ $item->poster }}" style="max-width:75px" alt="">
-                                                @endif
+                                                <img class="img-thumbnail" src="{{url(Storage::url('poster/'.$item->poster))}}" style="max-width:75px" alt="">
                                             </td>
                                             <td>{{ $item->title }}</td>
                                             <td> 

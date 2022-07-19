@@ -36,7 +36,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">About</a>
+                            <a class="nav-link click-scroll" href="{{ url('/#section_3') }}">About</a>
                         </li>
 
                         @guest
