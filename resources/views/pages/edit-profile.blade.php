@@ -37,7 +37,7 @@
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Name</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="{{ $item->name }}" name="name"
+                                            <input type="text" name="name"
                                                 class="form-control p-0 border-0" value="{{ $detail->name }}"> 
                                         </div>
                                     </div>
@@ -45,7 +45,7 @@
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Username</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="{{ $item->username }}" name="username"
+                                            <input type="text" name="username"
                                                 class="form-control p-0 border-0" value="{{ $detail->username }}"> 
                                         </div>
                                     </div>
@@ -53,7 +53,7 @@
                                     <div class="form-group mb-4">
                                         <label class="col-md-12 p-0">Organization</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="{{ $item->organization }}" name="organization"
+                                            <input type="text" name="organization"
                                                 class="form-control p-0 border-0" value="{{ $detail->organization }}"> 
                                         </div>
                                     </div>
@@ -61,18 +61,18 @@
                                     <div class="form-group mb-4">
                                         <label for="email" class="col-md-12 p-0">Email</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="email" placeholder="{{ $item->email }}"
+                                            <input type="email"
                                                 class="form-control p-0 border-0" name="email"
-                                                id="email" value="{{ $detail->id }}">
+                                                id="email" value="{{ $detail->email }}">
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-4">
                                         <label for="phone" class="col-md-12 p-0">No HP</label>
                                         <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="{{ $item->phone }}"
+                                            <input type="text"
                                                 class="form-control p-0 border-0" name="phone"
-                                                id="phone" value="{{ $detail->id }}">
+                                                id="phone" value="{{ $detail->phone }}">
                                         </div>
                                     </div>
 

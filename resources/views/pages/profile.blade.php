@@ -67,7 +67,7 @@
 
                                     <div class="form-group mb-4">
                                         <div class="col-sm-12">
-                                            <a href="{{ route(profile.edit), $item->id) }}" class="btn btn-primary">Edit Profile</a>
+                                            <a href="{{ route('profile.edit', $item->id) }}" class="btn btn-primary">Edit Profile</a>
                                         </div>
                                     </div>
                                 </form>
