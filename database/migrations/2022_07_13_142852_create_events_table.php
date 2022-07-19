@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('organizer');
             $table->string('title');
             $table->enum('category', ['Webinar', 'Workshop']);
-            $table->enum('faculty', ['FIKTI', 'FE', 'FTSP', 'FPSI', 'FSB', 'FIKOM','D3BK','General']);
+            $table->enum('faculty', ['FIKTI', 'FE', 'FTSP', 'FTI', 'FPSI', 'FSB', 'FIKOM','D3BK','General']);
             $table->datetime('date_and_time');
             $table->string('location');
             $table->string('registration_link');

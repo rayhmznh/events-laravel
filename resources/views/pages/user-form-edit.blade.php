@@ -75,6 +75,9 @@
                                     <option value="FTSP" 
                                         {{ $detail->faculty == 'FTSP' ? 'selected' : '' }}>FTSP
                                     </option>
+                                    <option value="FTI" 
+                                    {{ $detail->faculty == 'FTI' ? 'selected' : '' }}>FTI
+                                </option>
                                     <option value="FPSI" 
                                         {{ $detail->faculty == 'FPSI' ? 'selected' : '' }}>FPSI
                                     </option>
