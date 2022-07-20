@@ -27,6 +27,7 @@ return new class extends Migration
             $table->enum('status', ['Aktif', 'Non-Aktif']);
             $table->integer('view');
             $table->integer('view_link')->default(0);
+            $table->integer('id_user');
             $table->timestamps();
             
         });

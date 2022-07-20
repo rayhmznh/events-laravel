@@ -20,7 +20,8 @@ class Event extends Model
         'description',
         'poster',
         'status',
-        'view'
+        'view',
+        'id_user'
     ];
 
     protected $hidden = [
