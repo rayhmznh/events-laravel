@@ -6,13 +6,14 @@ use App\Models\Event;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use File;
 
 class AllEventController extends Controller
 {
     public function index(Request $request)
     {
-        $data = Event::all();
+        $data = Event::where('id_user', Auth::id())->get();
 
         return view('pages.event-dashboard', compact('data'));
     }
@@ -50,6 +51,7 @@ class AllEventController extends Controller
             'status' => "Non-Aktif",
             'view' => 0,
             'view_link' => 0,
+            'id_user' => Auth::id(),
         ]);
         return redirect()->route('all-event.index');
     }
