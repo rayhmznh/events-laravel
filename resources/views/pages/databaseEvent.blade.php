@@ -29,7 +29,7 @@
                                 <table class="table text-nowrap">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0"><b>Events</b></th>
+                                            <th class="border-top-0"><b>Poster Events</b></th>
                                             <th class="border-top-0"><b>Judul</b></th>
                                             <th class="border-top-0"><b>Status</b></th>
                                             <th class="border-top-0"><b>Action</b></th>

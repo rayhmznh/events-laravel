@@ -22,7 +22,7 @@
             </div>
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-12 col-md-12">
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Page Views</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -30,14 +30,14 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
+                    {{-- <div class="col-lg-6 col-md-12">
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Link Click</h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li class="ms-auto"><span class="counter text-purple">{{$event_click}}</span></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>    
         </div>

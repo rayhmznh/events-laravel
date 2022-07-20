@@ -39,8 +39,10 @@
                     
                     <br>All Rights Reserved. 
   
-                      <br><br>Supported by: <a title="Gunadarma University" rel="sponsored" href="https://gunadarma.ac.id/" target="_blank">Gunadarma University</a></p>
-
+                      <br><br>Supported by: <br><a title="Gunadarma University" rel="sponsored" href="https://gunadarma.ac.id/" target="_blank">Gunadarma University</a>
+                      <br>Kelas 3KA01
+                    </p>
+                                       
                     <a href="#section_1" class="bi-arrow-up arrow-icon custom-link"></a>
                 </div>
             </div>

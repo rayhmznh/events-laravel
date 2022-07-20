@@ -23,7 +23,7 @@
                 <div class="col-sm-12">
                     <div class="white-box">
                         <div class="d-flex justify-content-between mb-3">
-                            <h3 class="box-title">My Events</h3>
+                            <h3 class="box-title">My Events List</h3>
                             <a href="{{url('add-event')}}" class="btn btn-primary">Add Events</a>
                         </div>
 
@@ -31,7 +31,7 @@
                             <table class="table text-nowrap">
                                 <thead>
                                     <tr>
-                                        <th class="border-top-0"><b>Events</b></th>
+                                        <th class="border-top-0"><b>Poster Events</b></th>
                                         <th class="border-top-0"><b>Judul</b></th>
                                         <th class="border-top-0"><b>Status</b></th>
                                         <th class="border-top-0"><b>Action</b></th>
