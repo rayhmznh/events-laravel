@@ -100,7 +100,8 @@
                                     Description
                                 </div>
                                 <textarea class="col-10 form-control fill-form rounded-5" rows="5"
-                                    cols="5" id="description"  name="description" value="{{ old('description') }}" type="textarea" required></textarea>
+                                     cols="5" id="description"  name="description" value="{{ old('description') }}" ></textarea>
+                                     
                             </div>
                             <div class="row mb-4">
                                 <div class="title-form fw-semibold col-2">Your Poster

@@ -122,7 +122,7 @@
                                 <div class="title-form fw-semibold col-2">
                                     Description
                                 </div>
-                                <textarea class="col-10 form-control fill-form rounded-5" rows="5" cols="5" name="description"
+                                <textarea class="col-10 form-control fill-form rounded-5" rows="5" cols="5" id="description" name="description"
                                     >{{ $detail->description }}</textarea>
                             </div>
                             <div class="row mb-4">
@@ -146,17 +146,6 @@
                                     </div>
                                     <p class="fw-bold text-black-50">Inactive</p>
                                 </div>
-
-                                <!-- InActive Check -->
-                                {{-- <!-- Comment Active Check kalo mau liat Inactive Check -->
-                                <div class=" col-10 d-flex gap-1">
-                                    <p class="fw-bold text-black-50">Active</p>
-                                    <div class="form-check form-switch ml-4">
-                                        <input class="form-check-input" type="checkbox" role="switch"
-                                            id="flexSwitchCheckChecked">
-                                    </div>
-                                    <p class="fw-bold">Inactive</p>
-                                </div> --}}
                             </div>
 
                             <div class=" d-flex justify-content-end">
@@ -175,3 +164,15 @@
     </div>
 </main>
 @endsection
+@push('addon-script')
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js" ></script>
+
+  <script>
+      ClassicEditor
+          .create( document.querySelector( '#editor' ) )
+          .catch( error => {
+              console.error( error );
+          } );
+  </script>
+@endpush

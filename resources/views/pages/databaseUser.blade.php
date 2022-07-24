@@ -55,7 +55,7 @@
                                 @empty
                                 <tr>
                                     <td class="text-center">
-                                        Data Kosong
+                                        Empty Record
                                     </td>
                                 </tr>
                             @endforelse

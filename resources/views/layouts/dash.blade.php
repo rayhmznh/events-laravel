@@ -100,6 +100,9 @@
     @yield('user-form-edit')
     
     @include('includes.footerdash')
+
+    @stack('prepend-script')
     @include('includes.scriptdash')
+    @stack('addon-script')
 
 </body>

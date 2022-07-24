@@ -39,7 +39,7 @@
                         </p>
                         <div class="image_deskripsi" style="text-align:justify !important;">
                             <div class="content">
-                                <p>{{ $items->description }}</p>
+                                <p>{!! $items->description !!}</p>
                             </div>
 
                             <div class="row mt-5 info ">
@@ -122,3 +122,14 @@
     </main>
 </main>
 @endsection
+@push('addon-script')
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+  <script>
+      ClassicEditor
+          .create( document.querySelector( '#editor' ) )
+          .catch( error => {
+              console.error( error );
+          } );
+  </script>
+@endpush
+
