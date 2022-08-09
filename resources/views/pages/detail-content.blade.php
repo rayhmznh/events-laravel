@@ -12,8 +12,8 @@
         </div>
 
         <div class="d-flex gap-2 my-4">
-            <div class="btn btn-outline-success btn-sm btn-tags px-3 mr-2">{{ $items->faculty }}</div>
-            <div class="btn btn-outline-danger btn-sm btn-tags px-3 mr-2" style="width:auto !important;">
+            <div class="btn text-primary border-primary btn-sm mb-2 rounded-pill">{{ $items->faculty }}</div>
+            <div class="btn border-dark btn-sm mb-2 rounded-pill" style="width:auto !important;">
                 {{ $items->category }}
             </div>
         </div>

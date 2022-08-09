@@ -16,14 +16,14 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
                 <a href="{{ url('/') }}" class="navbar-brand mx-auto mx-lg-0">
                     <i class="bi-bullseye brand-logo"></i>
                     <span class="brand-text">Gunadarma <br> Event</span>
                 </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -41,10 +41,10 @@
 
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link custom-btn btn d-none d-lg-block" href="{{ url('register') }}" >Register</a> 
+                                <a class="nav-link click-scroll custom-btn btn  " href="{{ url('register') }}" >Register</a> 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link custom-btn btn d-none d-lg-block" href="{{ url('login') }}">Login</a>
+                                <a class="nav-link click-scroll custom-btn btn " href="{{ url('login') }}">Login</a>
                             </li>
                         @endguest
 
@@ -60,7 +60,7 @@
                             </form>
                         @endauth
                     </ul>
-                <div>
+                </div>
                         
             </div>
         </nav>
